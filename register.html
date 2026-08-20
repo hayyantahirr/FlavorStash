@@ -1,351 +1,419 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sign Up — FlavorStash Recipe Vault</title>
-  <meta name="description" content="Create your free FlavorStash account to start stashing, rating, and mastering your favorite recipes." />
-  
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            'brutal-yellow': '#FFE500',
-            'brutal-paprika': '#FF441F',
-            'brutal-matcha': '#00DF81',
-            'brutal-lavender': '#B982FF',
-            'brutal-bubblegum': '#FF6699',
-            'brutal-cyan': '#22CCFF',
-            'brutal-cream': '#FBF8F1',
-            'brutal-ink': '#121212',
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up — FlavorStash Recipe Vault</title>
+    <meta
+      name="description"
+      content="Create your free FlavorStash account to start stashing, rating, and mastering your favorite recipes."
+    />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "brutal-yellow": "#FFE500",
+              "brutal-paprika": "#FF441F",
+              "brutal-matcha": "#00DF81",
+              "brutal-lavender": "#B982FF",
+              "brutal-bubblegum": "#FF6699",
+              "brutal-cyan": "#22CCFF",
+              "brutal-cream": "#FBF8F1",
+              "brutal-ink": "#121212",
+            },
+            borderWidth: {
+              3: "3px",
+              4: "4px",
+            },
           },
-          borderWidth: {
-            '3': '3px',
-            '4': '4px',
-          }
-        }
-      }
-    }
-  </script>
+        },
+      };
+    </script>
 
-  <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
 
-  <!-- External Stylesheet -->
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body class="min-h-screen text-brutal-ink antialiased flex flex-col justify-between selection:bg-brutal-yellow selection:text-brutal-ink">
-
- 
-
-  <!-- Header / Navigation Back Link -->
-  <header class="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-5 flex items-center justify-between">
-    <a href="index.html" class="flex items-center gap-2 group">
-      <div class="w-10 h-10 bg-brutal-matcha border-3 border-brutal-ink brutal-shadow-sm flex items-center justify-center font-display font-black text-xl group-hover:rotate-6 transition-transform">
-        🔥
-      </div>
-      <div class="flex flex-col">
-        <span class="font-display font-black text-xl tracking-tight leading-none text-brutal-ink">
-          FLAVOR<span class="bg-brutal-paprika text-white px-1 py-0.5 rounded-sm border-2 border-brutal-ink inline-block rotate-neg-1">STASH</span>
-        </span>
-      </div>
-    </a>
-
-    <a href="index.html" class="brutal-btn bg-white hover:bg-zinc-100 font-bold text-xs px-3.5 py-2 flex items-center gap-1.5">
-      <i data-lucide="arrow-left" class="w-4 h-4"></i>
-      <span>Back to Dashboard</span>
-    </a>
-  </header>
-
-  <!-- Main Auth Container -->
-  <main class="flex-1 max-w-5xl w-full mx-auto px-4 sm:px-6 py-6 flex items-center justify-center">
-    
-    <div class="w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-      
-      <!-- Left Hero Banner / Perks Column (Desktop) -->
-      <div class="hidden lg:flex lg:col-span-5 flex-col justify-between bg-brutal-matcha border-4 border-brutal-ink p-8 brutal-shadow-lg relative overflow-hidden">
-        <!-- Decorative Badge -->
-        <div class="absolute -right-8 -top-8 rotate-12 bg-brutal-yellow text-brutal-ink border-3 border-brutal-ink px-6 py-2 font-display font-black text-xs uppercase tracking-widest brutal-shadow">
-          100% FREE
+    <!-- External Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body
+    class="min-h-screen text-brutal-ink antialiased flex flex-col justify-between selection:bg-brutal-yellow selection:text-brutal-ink"
+  >
+    <!-- Header / Navigation Back Link -->
+    <header
+      class="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-5 flex items-center justify-between"
+    >
+      <a href="index.html" class="flex items-center gap-2 group">
+        <div
+          class="w-10 h-10 bg-brutal-matcha border-3 border-brutal-ink brutal-shadow-sm flex items-center justify-center font-display font-black text-xl group-hover:rotate-6 transition-transform"
+        >
+          🔥
         </div>
-
-        <div class="space-y-6 relative z-10">
-          <div class="inline-flex items-center gap-2 bg-white border-2 border-brutal-ink px-3 py-1 text-xs font-black uppercase tracking-wider brutal-shadow-sm">
-            <span>✨</span> Stash Pioneer
-          </div>
-          
-          <h2 class="font-display font-black text-3xl xl:text-4xl text-brutal-ink leading-tight">
-            YOUR KITCHEN. YOUR RULES. YOUR VAULT.
-          </h2>
-
-          <p class="text-xs font-bold text-zinc-900 leading-relaxed">
-            Stop losing recipe screenshots and chaotic bookmark links. Build an organized, flavorful personal cookbook in seconds.
-          </p>
-
-          <!-- Feature Bullets -->
-          <div class="space-y-3 pt-2">
-            <div class="flex items-center gap-2.5 bg-white/90 border-2 border-brutal-ink p-2.5 brutal-shadow-sm">
-              <span class="text-base">🌮</span>
-              <span class="text-xs font-extrabold text-zinc-900">Custom Tags & Cuisine Categories</span>
-            </div>
-            <div class="flex items-center gap-2.5 bg-white/90 border-2 border-brutal-ink p-2.5 brutal-shadow-sm">
-              <span class="text-base">⚖️</span>
-              <span class="text-xs font-extrabold text-zinc-900">Automatic Portion Scaling</span>
-            </div>
-            <div class="flex items-center gap-2.5 bg-white/90 border-2 border-brutal-ink p-2.5 brutal-shadow-sm">
-              <span class="text-base">📸</span>
-              <span class="text-xs font-extrabold text-zinc-900">High-Res Food Photo Stashes</span>
-            </div>
-          </div>
+        <div class="flex flex-col">
+          <span
+            class="font-display font-black text-xl tracking-tight leading-none text-brutal-ink"
+          >
+            FLAVOR<span
+              class="bg-brutal-paprika text-white px-1 py-0.5 rounded-sm border-2 border-brutal-ink inline-block rotate-neg-1"
+              >STASH</span
+            >
+          </span>
         </div>
+      </a>
+    </header>
 
-        <!-- Recipe Image Preview Card -->
-        <div class="mt-8 border-3 border-brutal-ink bg-white p-3 brutal-shadow-sm rotate-pos-1">
-          <div class="flex items-center gap-3">
-            <img src="assets/berry_pancakes.jpg" alt="Berry Pancakes" class="w-12 h-12 object-cover border-2 border-brutal-ink" />
-            <div>
-              <p class="text-xs font-black text-brutal-ink">Whipped Berry Soufflé Pancakes</p>
-              <p class="text-[10px] font-bold text-pink-600">★ 5.0 • 25 min cook time</p>
-            </div>
+    <!-- Main Auth Container -->
+    <main
+      class="flex-1 max-w-5xl w-full mx-auto px-4 sm:px-6 py-6 flex items-center justify-center"
+    >
+      <div class="w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+        <!-- Left Hero Banner / Perks Column (Desktop) -->
+        <div
+          class="hidden lg:flex lg:col-span-5 flex-col justify-between bg-brutal-matcha border-4 border-brutal-ink p-8 brutal-shadow-lg relative overflow-hidden"
+        >
+          <!-- Decorative Badge -->
+          <div
+            class="absolute -right-8 -top-8 rotate-12 bg-brutal-yellow text-brutal-ink border-3 border-brutal-ink px-6 py-2 font-display font-black text-xs uppercase tracking-widest brutal-shadow"
+          >
+            100% FREE
           </div>
-        </div>
-      </div>
 
-      <!-- Right Registration Form Column -->
-      <div class="w-full lg:col-span-7 bg-white border-4 border-brutal-ink p-6 sm:p-10 brutal-shadow-xl flex flex-col justify-between">
-        
-        <div>
-          <!-- Title & Subtitle -->
-          <div class="space-y-1 mb-6">
-            <div class="flex items-center justify-between">
-              <span class="bg-brutal-yellow text-brutal-ink border-2 border-brutal-ink px-2.5 py-0.5 font-display font-black text-[11px] uppercase tracking-wider brutal-shadow-sm">
-                New Vault Registration
-              </span>
-              <span class="text-xs font-bold text-zinc-500">Free Forever</span>
+          <div class="space-y-6 relative z-10">
+            <div
+              class="inline-flex items-center gap-2 bg-white border-2 border-brutal-ink px-3 py-1 text-xs font-black uppercase tracking-wider brutal-shadow-sm"
+            >
+              <span>✨</span> Stash Pioneer
             </div>
-            <h1 class="font-display font-black text-2xl sm:text-3xl text-brutal-ink uppercase tracking-tight pt-2">
-              CREATE YOUR TASTE VAULT 👨‍🍳
-            </h1>
-            <p class="text-xs font-semibold text-zinc-600">
-              Join FlavorStash and never lose a mouth-watering recipe again.
+
+            <h2
+              class="font-display font-black text-3xl xl:text-4xl text-brutal-ink leading-tight"
+            >
+              YOUR KITCHEN. YOUR RULES. YOUR VAULT.
+            </h2>
+
+            <p class="text-xs font-bold text-zinc-900 leading-relaxed">
+              Stop losing recipe screenshots and chaotic bookmark links. Build
+              an organized, flavorful personal cookbook in seconds.
             </p>
+
+            <!-- Feature Bullets -->
+            <div class="space-y-3 pt-2">
+              <div
+                class="flex items-center gap-2.5 bg-white/90 border-2 border-brutal-ink p-2.5 brutal-shadow-sm"
+              >
+                <span class="text-base">🌮</span>
+                <span class="text-xs font-extrabold text-zinc-900"
+                  >Custom Tags & Cuisine Categories</span
+                >
+              </div>
+              <div
+                class="flex items-center gap-2.5 bg-white/90 border-2 border-brutal-ink p-2.5 brutal-shadow-sm"
+              >
+                <span class="text-base">⚖️</span>
+                <span class="text-xs font-extrabold text-zinc-900"
+                  >Automatic Portion Scaling</span
+                >
+              </div>
+              <div
+                class="flex items-center gap-2.5 bg-white/90 border-2 border-brutal-ink p-2.5 brutal-shadow-sm"
+              >
+                <span class="text-base">📸</span>
+                <span class="text-xs font-extrabold text-zinc-900"
+                  >High-Res Food Photo Stashes</span
+                >
+              </div>
+            </div>
           </div>
 
-          <!-- Register Form (UI Only) -->
-          <form id="registerForm" class="space-y-4" onsubmit="return false;">
-            
-            <!-- Full Name / Alias -->
-            <div>
-              <label for="regName" class="block text-xs font-black uppercase tracking-wider text-brutal-ink mb-1.5">
-                Chef Name or Alias *
-              </label>
-              <div class="relative">
-                <i data-lucide="user" class="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-500"></i>
-                <input 
-                  type="text" 
-                  id="regName" 
-                  placeholder="e.g. Chef Marco" 
-                  class="w-full pl-10 pr-3.5 py-2.5 bg-[#FFFDF5] brutal-input text-xs font-bold text-brutal-ink placeholder-zinc-400"
-                  required
-                />
+          <!-- Recipe Image Preview Card -->
+          <div
+            class="mt-8 border-3 border-brutal-ink bg-white p-3 brutal-shadow-sm rotate-pos-1"
+          >
+            <div class="flex items-center gap-3">
+              <img
+                src="assets/berry_pancakes.jpg"
+                alt="Berry Pancakes"
+                class="w-12 h-12 object-cover border-2 border-brutal-ink"
+              />
+              <div>
+                <p class="text-xs font-black text-brutal-ink">
+                  Whipped Berry Soufflé Pancakes
+                </p>
+                <p class="text-[10px] font-bold text-pink-600">
+                  ★ 5.0 • 25 min cook time
+                </p>
               </div>
             </div>
+          </div>
+        </div>
 
-            <!-- Email Address -->
-            <div>
-              <label for="regEmail" class="block text-xs font-black uppercase tracking-wider text-brutal-ink mb-1.5">
-                Email Address *
-              </label>
-              <div class="relative">
-                <i data-lucide="mail" class="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-500"></i>
-                <input 
-                  type="email" 
-                  id="regEmail" 
-                  placeholder="marco@culinaryvault.com" 
-                  class="w-full pl-10 pr-3.5 py-2.5 bg-[#FFFDF5] brutal-input text-xs font-bold text-brutal-ink placeholder-zinc-400"
-                  required
-                />
+        <!-- Right Registration Form Column -->
+        <div
+          class="w-full lg:col-span-7 bg-white border-4 border-brutal-ink p-6 sm:p-10 brutal-shadow-xl flex flex-col justify-between"
+        >
+          <div>
+            <!-- Title & Subtitle -->
+            <div class="space-y-1 mb-6">
+              <div class="flex items-center justify-between">
+                <span
+                  class="bg-brutal-yellow text-brutal-ink border-2 border-brutal-ink px-2.5 py-0.5 font-display font-black text-[11px] uppercase tracking-wider brutal-shadow-sm"
+                >
+                  New Vault Registration
+                </span>
+                <span class="text-xs font-bold text-zinc-500"
+                  >Free Forever</span
+                >
               </div>
+              <h1
+                class="font-display font-black text-2xl sm:text-3xl text-brutal-ink uppercase tracking-tight pt-2"
+              >
+                CREATE YOUR TASTE VAULT 👨‍🍳
+              </h1>
+              <p class="text-xs font-semibold text-zinc-600">
+                Join FlavorStash and never lose a mouth-watering recipe again.
+              </p>
             </div>
 
-            <!-- Passwords Row -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              <!-- Password -->
+            <!-- Register Form (UI Only) -->
+            <form id="registerForm" class="space-y-4" onsubmit="return false;">
+              <!-- Full Name / Alias -->
               <div>
-                <label for="regPassword" class="block text-xs font-black uppercase tracking-wider text-brutal-ink mb-1.5">
-                  Password *
+                <label
+                  for="regName"
+                  class="block text-xs font-black uppercase tracking-wider text-brutal-ink mb-1.5"
+                >
+                  Chef Name or Alias *
                 </label>
                 <div class="relative">
-                  <i data-lucide="lock" class="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-500"></i>
-                  <input 
-                    type="password" 
-                    id="regPassword" 
-                    placeholder="Min. 8 characters" 
-                    class="w-full pl-10 pr-9 py-2.5 bg-[#FFFDF5] brutal-input text-xs font-bold text-brutal-ink placeholder-zinc-400"
-                    required
-                  />
-                  <button 
-                    type="button" 
-                    id="toggleRegPasswordBtn" 
-                    class="absolute right-2.5 top-1/2 -translate-y-1/2 text-zinc-500 hover:text-brutal-ink focus:outline-none"
-                    title="Toggle Password"
-                  >
-                    <i data-lucide="eye" id="regEyeIcon" class="w-4 h-4"></i>
-                  </button>
-                </div>
-              </div>
-
-              <!-- Confirm Password -->
-              <div>
-                <label for="regConfirmPassword" class="block text-xs font-black uppercase tracking-wider text-brutal-ink mb-1.5">
-                  Confirm Password *
-                </label>
-                <div class="relative">
-                  <i data-lucide="shield-check" class="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-500"></i>
-                  <input 
-                    type="password" 
-                    id="regConfirmPassword" 
-                    placeholder="Repeat password" 
+                  <i
+                    data-lucide="user"
+                    class="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-500"
+                  ></i>
+                  <input
+                    type="text"
+                    id="regName"
+                    placeholder="e.g. Chef Marco"
                     class="w-full pl-10 pr-3.5 py-2.5 bg-[#FFFDF5] brutal-input text-xs font-bold text-brutal-ink placeholder-zinc-400"
                     required
                   />
                 </div>
               </div>
-            </div>
 
-            <!-- Password Strength Meter Visual -->
-            <div class="space-y-1 pt-0.5">
-              <div class="flex items-center justify-between text-[10px] font-extrabold uppercase">
-                <span class="text-zinc-500">Password Strength:</span>
-                <span id="strengthText" class="text-emerald-600">🟢 Chef Master</span>
+              <!-- Email Address -->
+              <div>
+                <label
+                  for="regEmail"
+                  class="block text-xs font-black uppercase tracking-wider text-brutal-ink mb-1.5"
+                >
+                  Email Address *
+                </label>
+                <div class="relative">
+                  <i
+                    data-lucide="mail"
+                    class="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-500"
+                  ></i>
+                  <input
+                    type="email"
+                    id="regEmail"
+                    placeholder="marco@culinaryvault.com"
+                    class="w-full pl-10 pr-3.5 py-2.5 bg-[#FFFDF5] brutal-input text-xs font-bold text-brutal-ink placeholder-zinc-400"
+                    required
+                  />
+                </div>
               </div>
-              <div class="grid grid-cols-4 gap-1.5 h-2">
-                <div class="bg-brutal-matcha border border-brutal-ink"></div>
-                <div class="bg-brutal-matcha border border-brutal-ink"></div>
-                <div class="bg-brutal-matcha border border-brutal-ink"></div>
-                <div class="bg-brutal-matcha border border-brutal-ink"></div>
+
+              <!-- Passwords Row -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <!-- Password -->
+                <div>
+                  <label
+                    for="regPassword"
+                    class="block text-xs font-black uppercase tracking-wider text-brutal-ink mb-1.5"
+                  >
+                    Password *
+                  </label>
+                  <div class="relative">
+                    <i
+                      data-lucide="lock"
+                      class="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-500"
+                    ></i>
+                    <input
+                      type="password"
+                      id="regPassword"
+                      placeholder="Min. 8 characters"
+                      class="w-full pl-10 pr-9 py-2.5 bg-[#FFFDF5] brutal-input text-xs font-bold text-brutal-ink placeholder-zinc-400"
+                      required
+                    />
+                    <button
+                      type="button"
+                      id="toggleRegPasswordBtn"
+                      class="absolute right-2.5 top-1/2 -translate-y-1/2 text-zinc-500 hover:text-brutal-ink focus:outline-none"
+                      title="Toggle Password"
+                    >
+                      <i data-lucide="eye" id="regEyeIcon" class="w-4 h-4"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Confirm Password -->
+                <div>
+                  <label
+                    for="regConfirmPassword"
+                    class="block text-xs font-black uppercase tracking-wider text-brutal-ink mb-1.5"
+                  >
+                    Confirm Password *
+                  </label>
+                  <div class="relative">
+                    <i
+                      data-lucide="shield-check"
+                      class="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-500"
+                    ></i>
+                    <input
+                      type="password"
+                      id="regConfirmPassword"
+                      placeholder="Repeat password"
+                      class="w-full pl-10 pr-3.5 py-2.5 bg-[#FFFDF5] brutal-input text-xs font-bold text-brutal-ink placeholder-zinc-400"
+                      required
+                    />
+                  </div>
+                </div>
               </div>
-            </div>
 
-            <!-- Favorite Cuisines Multi-Select Chips (Interactive UI) -->
-            <div>
-              <label class="block text-xs font-black uppercase tracking-wider text-brutal-ink mb-1.5">
-                Select Your Favorite Cuisines (Optional)
-              </label>
-              <div class="flex flex-wrap gap-2">
-                <button type="button" class="cuisine-chip brutal-btn px-2.5 py-1 text-[11px] font-bold bg-brutal-yellow text-brutal-ink">
-                  🍜 Asian
-                </button>
-                <button type="button" class="cuisine-chip brutal-btn px-2.5 py-1 text-[11px] font-bold bg-white text-brutal-ink">
-                  🍝 Italian
-                </button>
-                <button type="button" class="cuisine-chip brutal-btn px-2.5 py-1 text-[11px] font-bold bg-brutal-matcha text-brutal-ink">
-                  🌮 Mexican
-                </button>
-                <button type="button" class="cuisine-chip brutal-btn px-2.5 py-1 text-[11px] font-bold bg-white text-brutal-ink">
-                  🍔 Comfort
-                </button>
-                <button type="button" class="cuisine-chip brutal-btn px-2.5 py-1 text-[11px] font-bold bg-white text-brutal-ink">
-                  🍰 Desserts
-                </button>
-                <button type="button" class="cuisine-chip brutal-btn px-2.5 py-1 text-[11px] font-bold bg-white text-brutal-ink">
-                  🥑 Healthy
-                </button>
+              <!-- Favorite Cuisines Multi-Select Chips (Interactive UI) -->
+              <div>
+                <label
+                  class="block text-xs font-black uppercase tracking-wider text-brutal-ink mb-1.5"
+                >
+                  Select Your Favorite Cuisines (Optional)
+                </label>
+                <div class="flex flex-wrap gap-2">
+                  <button
+                    type="button"
+                    class="cuisine-chip brutal-btn px-2.5 py-1 text-[11px] font-bold bg-brutal-yellow text-brutal-ink"
+                  >
+                    🍜 Asian
+                  </button>
+                  <button
+                    type="button"
+                    class="cuisine-chip brutal-btn px-2.5 py-1 text-[11px] font-bold bg-white text-brutal-ink"
+                  >
+                    🍝 Italian
+                  </button>
+                  <button
+                    type="button"
+                    class="cuisine-chip brutal-btn px-2.5 py-1 text-[11px] font-bold bg-brutal-matcha text-brutal-ink"
+                  >
+                    🌮 Mexican
+                  </button>
+                  <button
+                    type="button"
+                    class="cuisine-chip brutal-btn px-2.5 py-1 text-[11px] font-bold bg-white text-brutal-ink"
+                  >
+                    🍔 Comfort
+                  </button>
+                  <button
+                    type="button"
+                    class="cuisine-chip brutal-btn px-2.5 py-1 text-[11px] font-bold bg-white text-brutal-ink"
+                  >
+                    🍰 Desserts
+                  </button>
+                  <button
+                    type="button"
+                    class="cuisine-chip brutal-btn px-2.5 py-1 text-[11px] font-bold bg-white text-brutal-ink"
+                  >
+                    🥑 Healthy
+                  </button>
+                </div>
               </div>
-            </div>
 
-            <!-- Terms Checkbox -->
-            <div class="flex items-start gap-2 pt-1">
-              <input 
-                type="checkbox" 
-                id="termsAgree" 
-                checked 
-                class="mt-0.5 w-4 h-4 accent-brutal-matcha border-2 border-brutal-ink cursor-pointer"
-                required
-              />
-              <label for="termsAgree" class="text-xs font-bold text-zinc-700 cursor-pointer select-none leading-snug">
-                I agree to the <a href="#" class="underline font-black decoration-2">Terms of Flavor</a> and promise never to overcook the garlic 🧄
-              </label>
-            </div>
+              <!-- Submit Button -->
+              <button
+                type="submit"
+                id="submitRegisterBtn"
+                class="w-full mt-2 brutal-btn bg-brutal-yellow hover:bg-yellow-400 text-brutal-ink font-display font-black text-sm py-3.5 uppercase tracking-wider flex items-center justify-center gap-2 shadow-[4px_4px_0px_#000]"
+              >
+                <i data-lucide="sparkles" class="w-4 h-4 fill-current"></i>
+                CREATE FREE TASTE VAULT 🚀
+              </button>
+            </form>
+          </div>
 
-            <!-- Submit Button -->
-            <button 
-              type="submit" 
-              id="submitRegisterBtn"
-              class="w-full mt-2 brutal-btn bg-brutal-yellow hover:bg-yellow-400 text-brutal-ink font-display font-black text-sm py-3.5 uppercase tracking-wider flex items-center justify-center gap-2 shadow-[4px_4px_0px_#000]"
-            >
-              <i data-lucide="sparkles" class="w-4 h-4 fill-current"></i>
-              CREATE FREE TASTE VAULT 🚀
-            </button>
-
-          </form>
-
+          <!-- Footer Link to Login -->
+          <div class="mt-6 pt-4 border-t-2 border-zinc-200 text-center">
+            <p class="text-xs font-bold text-zinc-600">
+              Already have a FlavorStash account?
+              <a
+                href="login.html"
+                class="text-brutal-paprika font-black underline decoration-2 hover:text-black ml-1"
+              >
+                Log In to Vault →
+              </a>
+            </p>
+          </div>
         </div>
-
-        <!-- Footer Link to Login -->
-        <div class="mt-6 pt-4 border-t-2 border-zinc-200 text-center">
-          <p class="text-xs font-bold text-zinc-600">
-            Already have a FlavorStash account? 
-            <a href="login.html" class="text-brutal-paprika font-black underline decoration-2 hover:text-black ml-1">
-              Log In to Vault →
-            </a>
-          </p>
-        </div>
-
       </div>
+    </main>
 
-    </div>
+    <!-- Footer Info -->
+    <footer class="py-4 text-center text-xs font-bold text-zinc-500">
+      © 2026 FlavorStash
+    </footer>
 
-  </main>
+    <!-- Vanilla JS Registration Script -->
+    <script>
+      // Initialize Lucide Icons
+      lucide.createIcons();
 
-  <!-- Footer Info -->
-  <footer class="py-4 text-center text-xs font-bold text-zinc-500">
-    © 2026 FlavorStash 
-  </footer>
+      // Show / Hide Password Toggle
+      const toggleRegPasswordBtn = document.getElementById(
+        "toggleRegPasswordBtn",
+      );
+      const regPasswordInput = document.getElementById("regPassword");
+      const regEyeIcon = document.getElementById("regEyeIcon");
 
-  <!-- Vanilla JS Registration Script -->
-  <script>
-    // Initialize Lucide Icons
-    lucide.createIcons();
+      if (toggleRegPasswordBtn && regPasswordInput) {
+        toggleRegPasswordBtn.addEventListener("click", () => {
+          const isPassword = regPasswordInput.type === "password";
+          regPasswordInput.type = isPassword ? "text" : "password";
+          regEyeIcon.setAttribute(
+            "data-lucide",
+            isPassword ? "eye-off" : "eye",
+          );
+          lucide.createIcons();
+        });
+      }
 
-    // Show / Hide Password Toggle
-    const toggleRegPasswordBtn = document.getElementById('toggleRegPasswordBtn');
-    const regPasswordInput = document.getElementById('regPassword');
-    const regEyeIcon = document.getElementById('regEyeIcon');
-
-    if (toggleRegPasswordBtn && regPasswordInput) {
-      toggleRegPasswordBtn.addEventListener('click', () => {
-        const isPassword = regPasswordInput.type === 'password';
-        regPasswordInput.type = isPassword ? 'text' : 'password';
-        regEyeIcon.setAttribute('data-lucide', isPassword ? 'eye-off' : 'eye');
-        lucide.createIcons();
+      // Cuisine Chips Toggle
+      const cuisineChips = document.querySelectorAll(".cuisine-chip");
+      cuisineChips.forEach((chip) => {
+        chip.addEventListener("click", () => {
+          const isSelected =
+            chip.classList.contains("bg-brutal-yellow") ||
+            chip.classList.contains("bg-brutal-matcha");
+          if (isSelected) {
+            chip.className =
+              "cuisine-chip brutal-btn px-2.5 py-1 text-[11px] font-bold bg-white text-brutal-ink";
+          } else {
+            chip.className =
+              "cuisine-chip brutal-btn px-2.5 py-1 text-[11px] font-bold bg-brutal-matcha text-brutal-ink";
+          }
+        });
       });
-    }
 
-    // Cuisine Chips Toggle
-    const cuisineChips = document.querySelectorAll('.cuisine-chip');
-    cuisineChips.forEach(chip => {
-      chip.addEventListener('click', () => {
-        const isSelected = chip.classList.contains('bg-brutal-yellow') || chip.classList.contains('bg-brutal-matcha');
-        if (isSelected) {
-          chip.className = 'cuisine-chip brutal-btn px-2.5 py-1 text-[11px] font-bold bg-white text-brutal-ink';
-        } else {
-          chip.className = 'cuisine-chip brutal-btn px-2.5 py-1 text-[11px] font-bold bg-brutal-matcha text-brutal-ink';
-        }
-      });
-    });
-
-    // Submit feedback mockup
-    const registerForm = document.getElementById('registerForm');
-    if (registerForm) {
-      registerForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        alert('🎉 Account creation UI ready! Backend registration will be integrated in future phases.');
-      });
-    }
-  </script>
-</body>
+      // Submit feedback mockup
+      const registerForm = document.getElementById("registerForm");
+      if (registerForm) {
+        registerForm.addEventListener("submit", (e) => {
+          e.preventDefault();
+          alert(
+            "🎉 Account creation UI ready! Backend registration will be integrated in future phases.",
+          );
+        });
+      }
+    </script>
+  </body>
 </html>

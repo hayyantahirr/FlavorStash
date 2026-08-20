@@ -5,7 +5,7 @@
  * NOTE: CRUD logic and backend API endpoints will be connected in future tasks.
  * Currently handling UI states, modals, theme interactions, and display toggles.
  */
-
+// UI Logic 
 document.addEventListener("DOMContentLoaded", () => {
   // Initialize Lucide icons
   if (window.lucide) {
@@ -296,3 +296,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
   console.log("🔥 FlavorStash Dashboard UI initialized smoothly.");
 });
+
