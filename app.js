@@ -5,7 +5,7 @@
  * NOTE: CRUD logic and backend API endpoints will be connected in future tasks.
  * Currently handling UI states, modals, theme interactions, and display toggles.
  */
-// UI Logic 
+// UI Logic
 document.addEventListener("DOMContentLoaded", () => {
   // Initialize Lucide icons
   if (window.lucide) {
@@ -296,4 +296,40 @@ document.addEventListener("DOMContentLoaded", () => {
 
   console.log("🔥 FlavorStash Dashboard UI initialized smoothly.");
 });
+const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+const authCheck = (() => {
+  const chefId = localStorage.getItem("chefId");
+  console.log("authCheck", chefId);
 
+  if (chefId) {
+    return window.location.replace("./dashboard.html");
+  }
+})();
+
+const register = () => {
+  const chefName = document.querySelector("#regName");
+  const chefEmail = document.querySelector("#regEmail");
+  const chefPassword = document.querySelector("#regPassword");
+  const confirmPassword = document.querySelector("#regConfirmPassword");
+  
+  const nameValue = chefName ? chefName.value.trim() : "";
+  const emailValue = chefEmail ? chefEmail.value.trim() : "";
+  const passwordValue = chefPassword ? chefPassword.value : "";
+  const confirmPasswordValue = confirmPassword ? confirmPassword.value : "";
+
+  // Get selected cuisines by filtering out chips that have selection styles (not bg-white)
+  const cuisineChips = document.querySelectorAll(".cuisine-chip");
+  const selectedCuisines = Array.from(cuisineChips)
+    .filter(chip => chip.classList.contains("bg-brutal-yellow") || chip.classList.contains("bg-brutal-matcha"))
+    .map(chip => chip.textContent.trim());
+
+  console.log("Chef Name:", nameValue);
+  console.log("Chef Email:", emailValue);
+  console.log("Password:", passwordValue);
+  console.log("Confirm Password:", confirmPasswordValue);
+  console.log("Selected Cuisines:", selectedCuisines);
+  
+
+  try {
+  } catch (error) {}
+};
