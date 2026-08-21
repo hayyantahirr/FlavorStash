@@ -6,22 +6,33 @@
  * Currently handling UI states, modals, theme interactions, and display toggles.
  */
 // UI Logic
-const authCheck = (() => {
-  const authToken = localStorage.getItem("authToken");
-  console.log("authCheck", authToken);
+(() => {
+  const token = localStorage.getItem("authToken");
+  const currentPath = window.location.pathname;
 
-  if (!authToken) {
+  const isAuthPage =
+    currentPath.endsWith("login.html") || currentPath.endsWith("register.html");
+
+  // Not logged in -> Kick out of protected pages
+  if (!token && !isAuthPage) {
     return window.location.replace("/login.html");
   }
-})();
-const authCheckForDashboard = (() => {
-  const userToken = localStorage.getItem("authToken");
-  console.log("authCheck", userToken);
 
-  if (userToken) {
-    return window.location.replace("./dashboard.html");
+  // Logged in -> Keep away from login/register
+  if (token && isAuthPage) {
+    return window.location.replace("/");
   }
 })();
+// const authCheck = (async () => {
+//   try {
+//     const authToken = localStorage.getItem("authToken");
+
+//     if (!authToken) {
+//       return window.location.replace("./login.html");
+//     }
+
+//    } catch (error) {}
+// })();
 
 document.addEventListener("DOMContentLoaded", () => {
   // Initialize Lucide icons

@@ -1,3 +1,27 @@
+// const authCheck = (() => {
+//   const authToken = localStorage.getItem("authToken");
+
+//   if (authToken) {
+//     return window.location.replace("./dashboard.html");
+//   }
+// })();
+(() => {
+  const token = localStorage.getItem("authToken");
+  const currentPath = window.location.pathname;
+
+  const isAuthPage =
+    currentPath.endsWith("login.html") || currentPath.endsWith("register.html");
+
+  // Not logged in -> Kick out of protected pages
+  if (!token && !isAuthPage) {
+    return window.location.replace("/login.html");
+  }
+
+  // Logged in -> Keep away from login/register
+  if (token && isAuthPage) {
+    return window.location.replace("/");
+  }
+})();
 const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
 const register = async () => {
