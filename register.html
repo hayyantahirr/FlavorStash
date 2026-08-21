@@ -332,7 +332,6 @@
 
               <!-- Submit Button -->
               <button
-              onclick="register()"
                 type="submit"
                 id="submitRegisterBtn"
                 class="w-full mt-2 brutal-btn bg-brutal-yellow hover:bg-yellow-400 text-brutal-ink font-display font-black text-sm py-3.5 uppercase tracking-wider flex items-center justify-center gap-2 shadow-[4px_4px_0px_#000]"
@@ -363,6 +362,9 @@
     <footer class="py-4 text-center text-xs font-bold text-zinc-500">
       © 2026 FlavorStash
     </footer>
+
+    <!-- JavaScript External File -->
+    <script src="app.js"></script>
 
     <!-- Vanilla JS Registration Script -->
     <script>
@@ -410,9 +412,9 @@
       if (registerForm) {
         registerForm.addEventListener("submit", (e) => {
           e.preventDefault();
-          alert(
-            "🎉 Account creation UI ready! Backend registration will be integrated in future phases.",
-          );
+          if (typeof register === "function") {
+            register();
+          }
         });
       }
     </script>
